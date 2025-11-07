@@ -5,9 +5,11 @@ Forward collision warning systems in modern ADAS primarily rely on single-frame 
 
 This research presents a hybrid deep learning framework combining YOLOv8 object detection with Long Short-Term Memory (LSTM) networks for predictive Cut-in forward collision warning in Advanced Driver Assistance Systems (ADAS). The system processes temporal sequences of driving scenes to anticipate potential collisions, addressing critical limitations of traditional single-frame analysis methods. By extracting spatiotemporal features from consecutive frames and learning temporal dependencies. This approach achieves early warning capabilities with 89.2% accuracy and 0.934 ROC AUC, significantly outperforming conventional computer vision methods. The proposed system demonstrates robust performance on the Car Crash Dataset, providing real-time collision probability estimates with visual warnings for enhanced road safety.
 
-Hybrid Architecture: First integration of YOLOv8 with LSTM for temporal collision prediction
-Temporal Understanding: Sequence-based analysis instead of single-frame processing
-Real-time Performance: Optimized for practical ADAS deployment
+Hybrid Architecture: 
+
+First integration of YOLOv8 with LSTM for temporal collision prediction ||
+Temporal Understanding: Sequence-based analysis instead of single-frame processing ||
+Real-time Performance: Optimized for practical ADAS deployment ||
 Comprehensive Evaluation: Extensive ablation studies and performance benchmarking
 
 Key Innovations:
@@ -23,7 +25,9 @@ Input Frames → YOLOv8 Detection → Feature Extraction → LSTM Sequence Proce
 
 Module Functions
 
-Module 1: YOLOv8 Object Detection
+Module 1: 
+
+YOLOv8 Object Detection
 Function: Real-time vehicle detection and localization
 Input: RGB frames (640×640 resolution)
 Output: Bounding boxes, confidence scores, class labels
@@ -33,7 +37,9 @@ Real-time processing (>30 FPS)
 Multi-class vehicle detection
 Bounding box regression
 
-Module 2: Feature Extraction Engine
+Module 2: 
+
+Feature Extraction Engine
 Function: Convert detections to temporal features
 Features Extracted:
 Normalized bounding box coordinates (center_x, center_y)
@@ -42,7 +48,9 @@ Motion features (approximated velocity)
 Spatial context (in_center, near_bottom flags)
 Detection confidence scores
 
-Module 3: LSTM Temporal Processor
+Module 3:
+
+LSTM Temporal Processor
 Function: Learn temporal patterns from feature sequences
 Architecture:
 Input: 30 features × 5 frames sequence
@@ -50,14 +58,18 @@ Layers: 2 LSTM layers (64→32 units)
 Regularization: Dropout (0.3-0.4), L2 regularization
 Output: Collision probability (0-1)
 
-Module 4: Collision Warning System
+Module 4: 
+
+Collision Warning System
 Function: Generate real-time warnings
 Thresholds:
 SAFE: Probability < 0.3 (Green)
 WARNING: 0.3 ≤ Probability < 0.7 (Orange)
 CRASH IMMINENT: Probability ≥ 0.7 (Red)
 
-Dataset Description : Car Crash Dataset 
+Dataset Description : 
+
+Car Crash Dataset 
 
 Total Images: 10,000 annotated frames
 Classes: Collision (1,993), Non-collision (8,007)
@@ -96,8 +108,8 @@ Near Bottom Flag (0.121) - Immediate collision risk
 
 Strengths of Proposed System: 
 
-Temporal Intelligence: Understands vehicle dynamics over time
-Early Warning: Predicts collisions before they become imminent
-Robust Performance: Handles various lighting and weather conditions
-Interpretable Features: Clear feature importance for validation
-Scalable Architecture: Adaptable to different vehicle types and scenarios
+Temporal Intelligence: Understands vehicle dynamics over time ||
+Early Warning: Predicts collisions before they become imminent ||
+Robust Performance: Handles various lighting and weather conditions ||
+Interpretable Features: Clear feature importance for validation ||
+Scalable Architecture: Adaptable to different vehicle types and scenarios.
