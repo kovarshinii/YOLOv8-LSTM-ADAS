@@ -57,7 +57,8 @@ SAFE: Probability < 0.3 (Green)
 WARNING: 0.3 ≤ Probability < 0.7 (Orange)
 CRASH IMMINENT: Probability ≥ 0.7 (Red)
 
-Dataset Description : Car Crash Dataset from Kaggle
+Dataset Description : Car Crash Dataset 
+
 Total Images: 10,000 annotated frames
 Classes: Collision (1,993), Non-collision (8,007)
 Annotations: Binary labels (collision: 'y'/'n')
